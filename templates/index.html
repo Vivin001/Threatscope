@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>🛡️ Threatscope File Checker</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #0e0e0e;
+            color: #e3e3e3;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #ff5555;
+            margin-bottom: 30px;
+        }
+
+        .upload-box {
+            background-color: #1a1a1a;
+            border: 2px dashed #ff5555;
+            padding: 40px;
+            border-radius: 10px;
+            width: 450px;
+            margin: 20px auto;
+            transition: 0.3s ease;
+        }
+
+        .upload-box:hover {
+            border-color: #ff0000;
+            box-shadow: 0 0 10px #ff0000;
+        }
+
+        input[type="file"] {
+            margin-top: 15px;
+            color: #ddd;
+        }
+
+        .button {
+            margin-top: 25px;
+            padding: 12px 30px;
+            background-color: #ff0000;
+            border: none;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #cc0000;
+        }
+
+        .error {
+            color: #ff4444;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🧪 Threatscope File Scanner</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <div class="upload-box">
+            <p>📁 Drag & drop a file or select manually</p>
+            <input type="file" name="file" required>
+        </div>
+        <input type="submit" value="💣 Scan with VirusTotal" class="button">
+    </form>
+
+    {% if error %}
+    <p class="error">{{ error }}</p>
+    {% endif %}
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Scan Result</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #121212;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .result-box {
+            background-color: #1e1e1e;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ff0000;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: #ff4444;
+            margin-bottom: 20px;
+        }
+
+        .label {
+            color: #888;
+            font-weight: bold;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            text-align: left;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        li {
+            margin: 12px 0;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: #ff4444;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            color: #ff2222;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="result-box">
+        <h2>🧾 Scan Results</h2>
+        <p><span class="label">SHA256:</span><br>{{ hash }}</p>
+
+        {% if result.message %}
+        <p><strong>{{ result.message }}</strong></p>
+        {% else %}
+        <ul>
+            <li><span class="label">Harmless:</span> {{ result.harmless }}</li>
+            <li><span class="label">Malicious:</span> {{ result.malicious }}</li>
+            <li><span class="label">Suspicious:</span> {{ result.suspicious }}</li>
+            <li><span class="label">Undetected:</span> {{ result.undetected }}</li>
+        </ul>
+        {% endif %}
+
+        <a href="/" class="back-link">🔁 Scan Another File</a>
+    </div>
+</body>
+
+</html>
