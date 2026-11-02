@@ -72,4 +72,4 @@ MIT License — free to use, modify, and distribute.
 
 ## Author
 
-Built by [YourName] — created for academic and portfolio purposes.
+Built by Vivin — For academic and portfolio purposes.
